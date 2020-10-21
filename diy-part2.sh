@@ -17,3 +17,8 @@
 git clone https://github.com/mlwrx1978/package.git diy
 mv diy/* package/
 rm -rf diy
+
+# open sfe
+sed -i "/114.114/d" package/lean/luci-app-sfe/root/etc/config/sfe
+sed -i "s/wifi '0'/wifi '1'/" package/lean/luci-app-sfe/root/etc/config/sfe
+sed -i "s/bbr '0'/bbr '1'/" package/lean/luci-app-sfe/root/etc/config/sfe
