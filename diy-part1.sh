@@ -14,7 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add feed source
-sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package\nsrc-git diy https://github.com/mlwrx1978/package' feeds.conf.default
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # replace Kernel version
 #sed -i 's/5.4/4.14/' target/linux/ramips/Makefile
