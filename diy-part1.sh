@@ -26,7 +26,7 @@ sed -i '/xiaomi_mir3g/{n;n;n;n;n;n;n;n;n;n;s/metadata/&\n  IMAGE\/factory.bin :=
 # Overclocking MT7621 1000Mhz--0x312 1100--0x362 1200Mhz--0x3B2
 sed -i "/@@ static struct/c@@ -113,49 +113,93 @@ static struct rt2880_pmx_group mt7621_pi" target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 sed -i "s/bus_clk;/bus_clk,i;/" target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
-sed -i "/REG_CPU_PLL);/a\\+\t\tpll &= ~(0x7ff);\n+\t\tpll |=  (0x362);\n+\t\trt_memc_w32(pll,MEMC_REG_CPU_PLL);\n+\t\tfor(i=0;i<1024;i++);" target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
+sed -i "/REG_CPU_PLL);/a\\+\t\tpll &= ~(0x7ff);\n+\t\tpll |=  (0x3B2);\n+\t\trt_memc_w32(pll,MEMC_REG_CPU_PLL);\n+\t\tfor(i=0;i<1024;i++);" target/linux/ramips/patches-5.4/102-mt7621-fix-cpu-clk-add-clkdev.patch
 
 # modify DHCP Configuration
 sed -i "/filter_aaaa/a\\\tlist server\t\t'127.0.0.1#5053'\n\toption port \t'54'\n\toption cachesize\t'0'" package/network/services/dnsmasq/files/dhcp.conf
