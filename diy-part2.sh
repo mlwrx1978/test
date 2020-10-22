@@ -22,3 +22,7 @@ rm -rf diy
 sed -i "/114.114/d" package/lean/luci-app-sfe/root/etc/config/sfe
 sed -i "s/wifi '0'/wifi '1'/" package/lean/luci-app-sfe/root/etc/config/sfe
 sed -i "s/bbr '0'/bbr '1'/" package/lean/luci-app-sfe/root/etc/config/sfe
+
+# upgrade chiandns-ng list file
+cd package/chinadns-ng
+./update-list.sh
